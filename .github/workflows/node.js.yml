@@ -19,7 +19,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: ls -l
+      - run: cd landing-page
+      - run: ls
       - run: yarn install
       - run: yarn build
         env:
