@@ -19,14 +19,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: cd landing-page
+      - run: cd ./landing-page
       - run: yarn install
       - run: yarn build
         env:
-          NEXT_PUBLIC_BASE_PATH: /bobmi-bank-webapp
+          NEXT_PUBLIC_BASE_PATH: /bobmi-bank
       - run: npx next export
         env:
-          NEXT_PUBLIC_BASE_PATH: /bobmi-bank-webapp
+          NEXT_PUBLIC_BASE_PATH: /bobmi-bank
       - run: touch ./out/.nojekyll
 
       - name: Deploy 🚀
