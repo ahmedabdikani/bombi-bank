@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./landing-page
 
     strategy:
       matrix:
@@ -18,9 +21,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-
-      - run: cd landing-page
-      - run: ls
       - run: yarn install
       - run: yarn build
         env:
