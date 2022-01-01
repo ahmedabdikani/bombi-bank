@@ -13,11 +13,11 @@ export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
-  const bg = Theme.colors[colorScheme].card;
+  const { card } = Theme.colors[colorScheme];
 
   useEffect(() => {
-    NavigationBar.setBackgroundColorAsync(bg);
-  }, []);
+    NavigationBar.setBackgroundColorAsync(card);
+  }, [colorScheme]);
 
   if (!isLoadingComplete) {
     return null;
