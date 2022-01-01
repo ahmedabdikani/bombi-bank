@@ -4,7 +4,6 @@ import {
   BottomTabBarProps,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-import Animated, { FadeIn, FadeOut, Layout } from 'react-native-reanimated';
 
 import { RootTabParamList } from '../types/navigation';
 import View from '../components/shared/View';
@@ -15,12 +14,8 @@ import WalletStackNavigator from './WalletStackNavigator';
 import { useThemeColors } from '../hooks/useThemeColor';
 import { BodyEmphasized } from '../components/shared/typography';
 import HomeStackNavigator from './HomeStackNavigator';
-import withClassComponent from '../hoc/withClassComponent';
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
-const AnimatedText = Animated.createAnimatedComponent(
-  withClassComponent(BodyEmphasized)
-);
 
 const TabBar: React.FC<BottomTabBarProps> = ({
   state,
@@ -120,15 +115,9 @@ const TabBar: React.FC<BottomTabBarProps> = ({
               )}
             </View>
             {isFocused && (
-              <AnimatedText
-                entering={FadeIn}
-                layout={Layout.springify()}
-                exiting={FadeOut}
-                ml='s'
-                color={color}
-              >
+              <BodyEmphasized ml='s' color={color}>
                 {label}
-              </AnimatedText>
+              </BodyEmphasized>
             )}
           </Button>
         );
