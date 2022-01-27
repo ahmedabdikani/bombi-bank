@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
           <Image
             width={588}
             height={509}
-            src='/images/hero.png'
+            src='/images/hero-min.png'
             alt='hero'
             loading='eager'
           />
