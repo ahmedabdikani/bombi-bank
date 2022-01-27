@@ -26,7 +26,7 @@ const pageLinks = ['Bank', 'About', 'Open Account', 'Card', 'Online'];
 const Header: React.FC<HeaderProps> = ({}) => {
   const router = useRouter();
   const { onToggle } = useDrawerContext();
-  const isMobile = useScreenSize().width < 768;
+  const isMobile = useScreenSize().width < 800;
 
   if (isMobile) {
     return (
