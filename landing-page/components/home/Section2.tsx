@@ -25,6 +25,9 @@ const Section2: React.FC<Section2Props> = ({}) => {
             bgGradient='linear(to-r, brand.2, transparent)'
             borderRadius='3xl'
             color='white'
+            css={{
+              perspective: '500px',
+            }}
           >
             <Heading maxW='520px' zIndex={1}>
               Kiosk - Everywhere You Live, Open Bombi Account Very Easy.
@@ -44,14 +47,25 @@ const Section2: React.FC<Section2Props> = ({}) => {
               </VStack>
             </HStack>
             <PrimaryButton>Join Now</PrimaryButton>
-            {/* <Image
-              display={['none', 'none']}
+            <Image
+              display={['none', 'none', 'none', 'flex']}
               src='/images/bombi-card-blue.png'
               alt='bombi card blue'
               position='absolute'
               right='-20px'
-              transform='auto'
-            /> */}
+              css={{
+                transformStyle: 'preserve-3d',
+                transform: `
+                rotateZ(-20deg)
+                translateX(40%)
+                translateY(10%)
+                skewX(30deg)
+                rotateX(20deg)
+              `,
+              }}
+              width={560}
+              height={360}
+            />
           </VStack>
           <Stack
             w={['100%', '100%', '100%', '35%']}
