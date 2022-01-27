@@ -59,7 +59,13 @@ const Hero: React.FC = () => {
             </Body1>
             <PrimaryButton>Get started</PrimaryButton>
           </VStack>
-          <Image width={588} height={509} src='/images/hero.png' alt='hero' />
+          <Image
+            width={588}
+            height={509}
+            src='/images/hero.png'
+            alt='hero'
+            loading='eager'
+          />
         </Stack>
         <Wrap mt='8' justify='space-around' align='flex-start' spacing={4}>
           {points.map(({ title, description, image }, index) => (
